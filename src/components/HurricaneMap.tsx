@@ -1,6 +1,7 @@
 
 "use client";
 
+import { MapContainer, TileLayer, Polyline, CircleMarker, Popup, useMapEvents } from "react-leaflet";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
@@ -50,9 +51,6 @@ const MapContent = ({ onPointClick, selectedPoint }: MapContentProps) => {
       </div>
     );
   }
-
-  // Import Leaflet components only on client
-  const { MapContainer, TileLayer, Polyline, CircleMarker, Popup, useMapEvents } = require("react-leaflet");
 
   const getCategoryColor = (category: string) => {
     if (category.includes("Cat. 5")) return "#FF0000";
